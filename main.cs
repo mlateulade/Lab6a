@@ -5,22 +5,30 @@ using System.Linq;
 class MainClass {
   public static void Main (string[] args) {
     
-    //int[] day;
-    double ftemp=0;
-    double ctemp=0; 
-    double[] cel = ctemp;
-    double[] far = ftemp;
-     
+    double[] cel = new double[7];    
+    double[] far = new double[7];
+    double ave = 0.00;    
+    
 
-    for(int pos=0; pos <= 1; pos++ )
+   for(int pos=0; pos < 7; pos++)
     {
       Console.WriteLine("Enter temperature in Celsius");
-      ctemp = Convert.ToDouble(Console.ReadLine());       
-      ftemp=(ctemp * 9/5) + 32; 
+      cel[pos] = Convert.ToDouble(Console.ReadLine());
+      far[pos] = (cel[pos] * 9/5) + 32;
     }
 
+    Console.WriteLine("Temperature in Fahrenheit ");
     
-    Console.WriteLine("Temperature in Fahrenheit " + ftemp);
+    Array.Reverse(far);
+    foreach (double x in far)
+    {
+      Console.WriteLine(x);
+    }
+
+    double sum = far.Sum();
+    ave = (sum / 7);
+    Console.WriteLine("Average weekly temperature is " + ave + "degrees Fahrenheit");
+
 
   }
 }
