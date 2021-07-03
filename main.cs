@@ -5,18 +5,22 @@ using System.Linq;
 class MainClass {
   public static void Main (string[] args) {
     
-    //int[] day; 
-    double[] cel;
-    double far=0; 
+    //int[] day;
+    double ftemp=0;
+    double ctemp=0; 
+    double[] cel = ctemp;
+    double[] far = ftemp;
+     
 
-    for(int pos=0; pos <= 6; pos++ )
+    for(int pos=0; pos <= 1; pos++ )
     {
       Console.WriteLine("Enter temperature in Celsius");
-      double ctemp = Convert.ToDouble(Console.ReadLine());
-      far=(cTemp * 9/5) + 32; 
+      ctemp = Convert.ToDouble(Console.ReadLine());       
+      ftemp=(ctemp * 9/5) + 32; 
     }
 
-    Console.WriteLine("Temperature in Fahrenheit " + fTemp);
+    
+    Console.WriteLine("Temperature in Fahrenheit " + ftemp);
 
   }
 }
